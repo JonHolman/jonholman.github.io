@@ -59,12 +59,16 @@ var number2;
 var enteredAnswer;
 var answer;
 var lastRandomNum=0;
+var lastAnswer=0;
 
 function problem(){
-	number1 = Math.floor( 1 + Math.random() * 12 );
-	number2 = Math.floor( 1 + Math.random() * 12 );
+	do {
+		number1 = Math.round( Math.random() * 12 );
+		number2 = Math.round( Math.random() * 12 );
+		answer = (number1 * number2);
+	} while (answer == lastAnswer);
 	document.getElementById("prompt").innerHTML = "" + number1 + " x " +     number2 + " :";
-	answer = (number1*number2);
+	lastAnswer = answer;
 	fillButtons();
 	placeCorrectAnswer();
 }
@@ -79,20 +83,6 @@ function correct() {
 	statusDiv.innerHTML="Very good!";
 	document.getElementById("score").innerHTML = parseInt(document.getElementById("score").innerHTML)+1;
 	problem();
-}
-
-function answer1(){
-	var statusDiv = document.getElementById("status");
-	enteredAnswer = parseInt(document.getElementById("answer").value);
-
-	if(enteredAnswer == answer) {
-		statusDiv.innerHTML="Very good!";
-		problem();
-	}
-	else
-	{
-		statusDiv.innerHTML="Please try again.";
-	}
 }
 
 function fillButtons(){
