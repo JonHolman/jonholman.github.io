@@ -73,7 +73,7 @@ function problem(){
 	placeCorrectAnswer();
 }
 function incorrect(id) {
-	alert( id.replace('answerOption','') );
+	lastAnswerPlace = parseInt(id.replace('answerOption',''));
 	var statusDiv = document.getElementById("status");
 	statusDiv.innerHTML="Please try again.";
 	fillButtons();
