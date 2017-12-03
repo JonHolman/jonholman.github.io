@@ -73,12 +73,12 @@ function problem(operation, max){
   do {
 		number1 = Math.round( Math.random() * maxValOfChoices );
 		number2 = Math.round( Math.random() * maxValOfChoices );
-		if (op == "+") {
+		if (op == "add") {
       answer = (number1 + number2);
     }
 	} while (answer == lastAnswer);
 	document.getElementById("prompt").innerHTML = "" + number1 + " ";
-  if (op == "+") {
+  if (op == "add") {
     document.getElementById("prompt").innerHTML += "+"
     }
   document.getElementById("prompt").innerHTML += " " +     number2 + " :";
@@ -102,7 +102,7 @@ function fillButtons(){
 	var els = document.getElementsByClassName("answerButton");
 	[].forEach.call(els, function (el) { 
 		do {
-      if (op == "+") {
+      if (op == "add") {
 			  el.innerHTML=Math.floor( 1 + Math.random() * (maxValOfChoices+maxValOfChoices) ); 
       }
 		} while (parseInt(el.innerHTML) == answer);
@@ -121,7 +121,7 @@ function placeCorrectAnswer(){
 }
 </script>
 </head>
-<body onload="problem("+",20);">
+<body onload="problem("add",20);">
 <form>
 <div id="scoreboard">Score: <span id="score">0</span></div>
 <div id ="prompt" style="height: 100px;"></div>
