@@ -59,7 +59,7 @@ var number1;
 var number2;
 var enteredAnswer;
 var answer;
-var lastRandomNum=0;
+var lastAnswerPlace=0;
 var lastAnswer=0;
 function problem(){
 	do {
@@ -97,8 +97,8 @@ function placeCorrectAnswer(){
 	var randomNum=0;
 	do {
 		randomNum = Math.floor( 1 + Math.random() * 4 );
-	} while (randomNum == lastRandomNum);
-	lastRandomNum = randomNum;
+	} while (randomNum == lastAnswerPlace);
+	lastAnswerPlace = randomNum;
 	var el = document.getElementById("answerOption"+randomNum);
 	el.innerHTML=answer; 
 	el.onclick  = function() {  correct(); };
