@@ -16,7 +16,6 @@ text-shadow: #7ea4bd 0 1px 0;
    text-decoration: none;
    text-align: center;
 }
-
 #prompt {
 	padding-top: 20px;
 }
@@ -27,8 +26,6 @@ text-shadow: #7ea4bd 0 1px 0;
    width: 100%;
    clear: both;
 }
-
-
 .answerButton {
 	width:40px;
 	display:inline-block;
@@ -57,31 +54,20 @@ text-shadow: #7ea4bd 0 1px 0;
    
    #scoreboard	{ position:fixed; top:2%; right:2%; }
 </style>
-<script>
-	var op;
-var maxValOfChoices;
+<script type="text/javascript">
 var number1;
 var number2;
 var enteredAnswer;
 var answer;
 var lastRandomNum=0;
 var lastAnswer=0;
-
-function problem(operation, max){
-	op = operation;
-  maxValOfChoices = max;
-  do {
-		number1 = Math.round( Math.random() * maxValOfChoices );
-		number2 = Math.round( Math.random() * maxValOfChoices );
-		if (op == "add") {
-      answer = (number1 + number2);
-    }
+function problem(){
+	do {
+		number1 = Math.round( Math.random() * 20 );
+		number2 = Math.round( Math.random() * 20 );
+		answer = (number1 + number2);
 	} while (answer == lastAnswer);
-	document.getElementById("prompt").innerHTML = "" + number1 + " ";
-  if (op == "add") {
-    document.getElementById("prompt").innerHTML += "+"
-    }
-  document.getElementById("prompt").innerHTML += " " +     number2 + " :";
+	document.getElementById("prompt").innerHTML = "" + number1 + " + " +     number2 + " :";
 	lastAnswer = answer;
 	fillButtons();
 	placeCorrectAnswer();
@@ -102,9 +88,7 @@ function fillButtons(){
 	var els = document.getElementsByClassName("answerButton");
 	[].forEach.call(els, function (el) { 
 		do {
-      if (op == "add") {
-			  el.innerHTML=Math.floor( 1 + Math.random() * (maxValOfChoices+maxValOfChoices) ); 
-      }
+			el.innerHTML=Math.floor( 1 + Math.random() * 40 ); 
 		} while (parseInt(el.innerHTML) == answer);
 		el.onclick  = function() {  incorrect(); };
 	})
@@ -121,7 +105,7 @@ function placeCorrectAnswer(){
 }
 </script>
 </head>
-<body onload="problem('add',20);">
+<body onload="problem();">
 <form>
 <div id="scoreboard">Score: <span id="score">0</span></div>
 <div id ="prompt" style="height: 100px;"></div>
