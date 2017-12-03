@@ -80,6 +80,8 @@ function problem(){
 function incorrect() {
 	var statusDiv = document.getElementById("status");
 	statusDiv.innerHTML="Please try again.";
+	fillButtons();
+	placeCorrectAnswer();
 }
 
 function correct() {
