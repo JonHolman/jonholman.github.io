@@ -64,7 +64,15 @@ var lastAnswer=0;
 function problem(){
 	do {
 		number1 = Math.round( Math.random() * 12 );
-		number2 = Math.round( Math.random() * 12 );
+		number2 = Math.round( Math.random() * 4 );
+		
+		// start temporary code
+		if number2 == 3
+			number2 = 10;
+		if number2 == 4
+			number2 = 5;
+		// end temporary code
+		
 		answer = (number1 * number2);
 	} while (answer == lastAnswer);
 	document.getElementById("prompt").innerHTML = "" + number1 + " x " +     number2 + " :";
