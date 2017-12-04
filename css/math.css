@@ -43,3 +43,15 @@ text-shadow: #7ea4bd 0 1px 0;
    }
    
    #scoreboard	{ position:fixed; top:2%; right:2%; }
+
+@media only screen and (orientation:portrait) {
+  body {
+    -webkit-transform: rotate(90deg);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
