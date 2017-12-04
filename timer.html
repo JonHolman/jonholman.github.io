@@ -1,10 +1,14 @@
-<!-- from https://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer -->
+<!-- started from https://stackoverflow.com/questions/1191865/code-for-a-simple-javascript-countdown-timer -->
 <html>
 <head>
 <script>
 var count=90;
 
-var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+function startTimer()
+{
+  count = parseInt(document.getElementById("seconds").value);
+  var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+}
 
 function timer()
 {
@@ -22,5 +26,9 @@ function timer()
 <p>
   <span id="timer"></span>
 </p>
+<form>
+  Seconds: <input type="number" id="seconds" value=90>
+  <input type="button" value="Start" onClick"startTimer()">
+</form>
 </body>
 </html>
