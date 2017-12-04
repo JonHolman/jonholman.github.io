@@ -75,6 +75,15 @@ function problem(){
 		
 		answer = (number1 * number2);
 	} while (answer == lastAnswer);
+	
+	//randomly flip the numbers
+	if (Math.round( Math.random() * 1 ) == 1)
+	{
+		temp = number2;
+		number2 = number1;
+		number1 = temp;
+	}
+	
 	document.getElementById("prompt").innerHTML = "" + number1 + " x " +     number2 + " :";
 	lastAnswer = answer;
 	fillButtons();
