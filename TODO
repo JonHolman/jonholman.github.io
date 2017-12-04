@@ -1,6 +1,7 @@
 Add timer to mupltiplication page (upper left), when it hits 0 - display full score saying time is up and what their score is
+- include list of ones they had trouble with
 
-Create addition and subtraction pages, without timer 1-20.
+
 
 Look into forcing the pages to only display in landscape, via CSS
 
