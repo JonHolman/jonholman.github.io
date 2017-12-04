@@ -24,15 +24,6 @@ function timer()
   }
  document.getElementById("timer").innerHTML=count + " secs";
 }
-
-// from https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box
-document.getElementById("seconds")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("startButton").click();
-    }
-});
 </script>
 </head>
 <body>
@@ -50,3 +41,14 @@ document.getElementById("seconds")
 </div>
 </body>
 </html>
+
+<script>
+// from https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box
+document.getElementById("seconds")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("startButton").click();
+    }
+});
+</script>
