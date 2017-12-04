@@ -14,8 +14,12 @@ h1, p {
   
   <script>
     //from https://stackoverflow.com/questions/9870512/how-to-obtaining-the-querystring-from-the-current-url-with-javascript
-    var params = (new URL(document.location)).searchParams;
+    let params = (new URL(document.location)).searchParams;
     
+    //original from https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/entries
+    for(var pair of params.entries()) {
+      document.getElementById("output").innerHTML+='<strong>'+pair[0]+ ':</strong> '+ pair[1] + '<br />'; 
+    }
     
     //let name = params.get("name");
   </script>
