@@ -44,6 +44,7 @@ text-shadow: #7ea4bd 0 1px 0;
    
    #scoreboard	{ position:fixed; top:2%; right:2%; }
 
+/* from https://coderwall.com/p/q79kaq/force-users-to-use-ipad-landscape-orientation */
 @media only screen and (orientation:portrait) {
   body {
     -webkit-transform: rotate(90deg);
