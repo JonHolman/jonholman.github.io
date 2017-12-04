@@ -18,6 +18,8 @@ function timer()
   if (count <= 0)
   {
      clearInterval(counter);
+     document.getElementById("original").style.display = "none";
+     document.getElementById("expired").style.display = "block";
      return;
   }
  document.getElementById("timer").innerHTML=count + " secs";
@@ -25,12 +27,17 @@ function timer()
 </script>
 </head>
 <body>
+<div id="original">
 <p>
   <span id="timer"></span>
 </p>
 <form id="form">
-  Seconds: <input type="number" id="seconds" value=90>
+  Seconds: <input type="number" id="seconds" value="90" size="3">
   <input type="button" value="Start" onclick="startTimer()">
 </form>
+</div>
+<div id="expired" style="display: none;">
+ <p>Time has expired.</p>
+</div>
 </body>
 </html>
