@@ -4,5 +4,3 @@ Add timer to mupltiplication page (upper left), when it hits 0 - display full sc
 
 
 Look into forcing the pages to only display in landscape, via CSS
-
-Move CSS into another file
