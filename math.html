@@ -7,8 +7,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>Addition</title>
-<link rel="stylesheet" href="/css/math.css">
-<script type="text/javascript" src="/js/math.js">
+<link rel="stylesheet" href="css/math.css">
+<script type="text/javascript" src="js/math.js">
 </script>
 </head>
 <body onload="problem();">
@@ -16,9 +16,9 @@
 <div id="original">
 <span id="timer"></span>
 
-<div id="form">
+<div id="timerForm">
   Seconds: <input type="number" id="seconds" value="90" style="width: 50px;">
-  <input type="button" value="Start" id="startButton" onclick="startTimer()">
+  <input type="button" value="Start Timer" id="startButton" onclick="startTimer()">
 </div>
 <div id="scoreboard">Score: <span id="score">0</span></div>
 <div id ="prompt" style="height: 100px;"></div>
@@ -34,7 +34,7 @@
   
 </div>
 <div id="expired" style="display: none;">
- <p>Time has expired.</p>
+ <p id="expPrompt">Time has expired.</p>
  <p id="results"></p>
 </div>  
 </body>

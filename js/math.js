@@ -4,7 +4,7 @@ var enteredAnswer;
 var answer;
 var lastAnswerPlace=0;
 var lastAnswer=0;
-var challenges = new array();
+var challenges = new Array();
 
 var op = 'a';
 var maxForNumber1 = 20;
@@ -128,8 +128,9 @@ var counter;
 function startTimer()
 {
   count = parseInt(document.getElementById("seconds").value);
+  document.getElementById("timer").innerHTML=count + " secs";
   counter=setInterval(timer, 1000); //1000 will  run it every 1 second
-  document.getElementById("form").style.display = "none";
+  document.getElementById("timerForm").style.display = "none";
 }
 function timer()
 {
@@ -139,6 +140,12 @@ function timer()
      clearInterval(counter);
      document.getElementById("original").style.display = "none";
      document.getElementById("expired").style.display = "block";
+	 document.getElementById("results").innerHTML += "Score: " + parseInt(document.getElementById("score").innerHTML) + "<br />";
+	 document.getElementById("results").innerHTML += "Great Job!<br />";
+	 document.getElementById("results").innerHTML += "<br />Practice the following: <br />";
+	 challenges.forEach(function(item) {
+		document.getElementById("results").innerHTML += item+"<br />";
+	 });
      return;
   }
  document.getElementById("timer").innerHTML=count + " secs";

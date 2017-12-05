@@ -1,4 +1,4 @@
-#prompt,#options,#status,#scoreboard {
+#prompt,#expPrompt,#options,#status,#scoreboard,#timer,#timerForm,#results{
 text-shadow: #7ea4bd 0 1px 0;
    color: #06426c;
    font-size: 24px;
@@ -6,7 +6,7 @@ text-shadow: #7ea4bd 0 1px 0;
    text-decoration: none;
    text-align: center;
 }
-#prompt {
+#prompt,#expPrompt{
 	padding-top: 20px;
 }
 #prompt,#options,#status {
@@ -42,6 +42,7 @@ text-shadow: #7ea4bd 0 1px 0;
    }
    
    #scoreboard	{ position:fixed; top:2%; right:2%; }
+   #timer,#timerForm	{ position:fixed; top:2%; left:2%; }
 
 /* from https://coderwall.com/p/q79kaq/force-users-to-use-ipad-landscape-orientation */
 @media only screen and (orientation:portrait) {
