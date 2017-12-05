@@ -4,6 +4,7 @@ var enteredAnswer;
 var answer;
 var lastAnswerPlace=0;
 var lastAnswer=0;
+var challenges = new array();
 
 var op = 'a';
 var maxForNumber1 = 20;
@@ -66,6 +67,7 @@ function problem(){
 	placeCorrectAnswer();
 }
 function incorrect(id) {
+	challenges.push( document.getElementById("prompt").innerHTML.replace(' :','') );
 	lastAnswerPlace = parseInt(id.replace('answerOption',''));
 	var statusDiv = document.getElementById("status");
 	statusDiv.innerHTML="Please try again.";
