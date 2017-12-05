@@ -11,6 +11,7 @@ var maxForNumber2 = 20;
 
 
 function problem(){
+	let params = (new URL(document.location)).searchParams;
 	if (params.get("op")!=null) {
 		op = params.get("op");
 	}
