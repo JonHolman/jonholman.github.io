@@ -18,8 +18,8 @@ function problem(){
 	
 	if (op == 'm')
 	{
-		var maxForNumber1 = 12;
-		var maxForNumber2 = 4;	
+		maxForNumber1 = 12;
+		maxForNumber2 = 4;	
 	}
 	
 	
