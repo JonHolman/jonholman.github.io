@@ -52,7 +52,8 @@ function problem(){
 		else {
 			answer = (number1 + number2);
 		}
-	} while (answer == lastAnswer);
+	} while (answer == lastAnswer &&
+		(answer <= 1 &&  (Math.round( Math.random() * 1 ) == 1) ) );
 	document.getElementById("prompt").innerHTML = "" + number1 + " ";
 	switch(op) {
 	    case 'm':
