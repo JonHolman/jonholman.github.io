@@ -120,3 +120,27 @@ function placeCorrectAnswer(){
 	el.innerHTML = answer; 
 	el.onclick  = function() {  correct(); };
 }
+
+// start timer code
+var count=90;
+var counter;
+ 
+function startTimer()
+{
+  count = parseInt(document.getElementById("seconds").value);
+  counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+  document.getElementById("form").style.display = "none";
+}
+function timer()
+{
+  count=count-1;
+  if (count <= 0)
+  {
+     clearInterval(counter);
+     document.getElementById("original").style.display = "none";
+     document.getElementById("expired").style.display = "block";
+     return;
+  }
+ document.getElementById("timer").innerHTML=count + " secs";
+}
+// end timer code
