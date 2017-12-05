@@ -17,6 +17,7 @@ function problem(){
 	}
 	
 	if (op == 'm') {
+		document.title = "Multiplication";
 		maxForNumber1 = 12;
 		maxForNumber2 = 4;	
 	}
