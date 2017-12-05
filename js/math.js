@@ -16,8 +16,7 @@ function problem(){
 		op = params.get("op");
 	}
 	
-	if (op == 'm')
-	{
+	if (op == 'm') {
 		maxForNumber1 = 12;
 		maxForNumber2 = 4;	
 	}
@@ -45,9 +44,22 @@ function problem(){
 			number1 = temp;
 		}
 
-		answer = (number1 + number2);
+		if (op == 'm') {
+			answer = (number1 * number2);
+		}
+		else {
+			answer = (number1 + number2);
+		}
 	} while (answer == lastAnswer);
-	document.getElementById("prompt").innerHTML = "" + number1 + " + " +     number2 + " :";
+	document.getElementById("prompt").innerHTML = "" + number1 + " ";
+	switch(op) {
+	    case 'm':
+		document.getElementById("prompt").innerHTML += "x";
+		break;
+	    default:
+		document.getElementById("prompt").innerHTML += "+";
+	}
+	document.getElementById("prompt").innerHTML += " " +     number2 + " :";
 	lastAnswer = answer;
 	fillButtons();
 	placeCorrectAnswer();
@@ -76,7 +88,7 @@ function fillButtons(){
 				el.innerHTML=120;
 			}
 			else {
-				el.innerHTML=Math.floor( 1 + Math.random() * 40 ); 
+				el.innerHTML=Math.floor( 1 + Math.random() * (maxForNumber1+maxForNumber2) ); 
 			}
 		} while (parseInt(el.innerHTML) == answer);
 		el.onclick  = function() {  incorrect(this.id); };
@@ -88,7 +100,7 @@ function placeCorrectAnswer(){
 		randomNum = Math.floor( 1 + Math.random() * 4 );
 	} while (randomNum == lastAnswerPlace);
 	lastAnswerPlace = randomNum;
-	var el = document.getElementById("answerOption"+randomNum);
-	el.innerHTML=answer; 
+	var el = document.getElementById( "answerOption" + randomNum );
+	el.innerHTML = answer; 
 	el.onclick  = function() {  correct(); };
 }
