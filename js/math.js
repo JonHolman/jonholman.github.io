@@ -78,19 +78,31 @@ function correct() {
 	problem();
 }
 function fillButtons(){
+	var maxAnswerChoice;
 	var els = document.getElementsByClassName("answerButton");
+	var index = 0;
+	
+	if (op == 'm') {
+		maxAnswerChoice = 67;
+	}
+	else {
+		maxAnswerChoice = maxForNumber1+maxForNumber2;
+	}
+	
+	// from https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
+	var arr = []
+	while(arr.length < els.length){
+	    var randomnumber = Math.floor(Math.random()*maxAnswerChoice) + 1;
+	    if(arr.indexOf(randomnumber) > -1 || randomnumber == answer) continue;
+	    arr[arr.length] = randomnumber;
+	}
+	
 	[].forEach.call(els, function (el) { 
-		do {
-			if (op == 'm')
-			{
-			el.innerHTML=Math.floor( 1 + Math.random() * 67 ); 
-			if (el.innerHTML > 60)
-				el.innerHTML=120;
-			}
-			else {
-				el.innerHTML=Math.floor( 1 + Math.random() * (maxForNumber1+maxForNumber2) ); 
-			}
-		} while (parseInt(el.innerHTML) == answer);
+		el.innerHTML=arr[index];
+		if (op == 'm' && el.innerHTML > 60) {
+			el.innerHTML=120;
+		}
+		index++;
 		el.onclick  = function() {  incorrect(this.id); };
 	})
 }
