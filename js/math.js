@@ -142,10 +142,13 @@ function timer()
      document.getElementById("expired").style.display = "block";
 	 document.getElementById("results").innerHTML += "Score: " + parseInt(document.getElementById("score").innerHTML) + "<br />";
 	 document.getElementById("results").innerHTML += "Great Job!<br />";
-	 document.getElementById("results").innerHTML += "<br />Practice the following: <br />";
-	 challenges.forEach(function(item) {
-		document.getElementById("results").innerHTML += item+"<br />";
-	 });
+	 if (challenges.length > 0)
+	 {
+		 document.getElementById("results").innerHTML += "<br />Practice the following: <br />";
+		 challenges.forEach(function(item) {
+			document.getElementById("results").innerHTML += item+"<br />";
+		 });
+	 }
      return;
   }
  document.getElementById("timer").innerHTML=count + " secs";
