@@ -9,9 +9,6 @@ text-shadow: #7ea4bd 0 1px 0;
 #prompt {
 	padding-top: 20px;
 }
-form {
-    width: 560px; 	  
-}	
 #prompt,#options,#status {
    vertical-align: middle;
    margin: auto;
