@@ -12,7 +12,14 @@
 </script>
 </head>
 <body onload="problem();">
-<form>
+
+<div id="original">
+<span id="timer"></span>
+
+<div id="form">
+  Seconds: <input type="number" id="seconds" value="90" style="width: 50px;">
+  <input type="button" value="Start" id="startButton" onclick="startTimer()">
+</div>
 <div id="scoreboard">Score: <span id="score">0</span></div>
 <div id ="prompt" style="height: 100px;"></div>
 <!-- <input id="answer" type="text" />
@@ -23,7 +30,22 @@
 <a class='answerButton' id='answerOption2'></a>
 <a class='answerButton' id='answerOption3'></a>
 <a class='answerButton' id='answerOption4'></a>
+</div>  
+  
 </div>
-</form>
+<div id="expired" style="display: none;">
+ <p>Time has expired.</p>
+ <p id="results"></p>
+</div>  
 </body>
 </html>
+<script>
+// from https://stackoverflow.com/questions/155188/trigger-a-button-click-with-javascript-on-the-enter-key-in-a-text-box
+document.getElementById("seconds")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("startButton").click();
+    }
+});
+</script>
