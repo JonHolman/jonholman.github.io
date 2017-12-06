@@ -68,7 +68,10 @@ function problem(){
 	placeCorrectAnswer();
 }
 function incorrect(id) {
-	challenges.push( document.getElementById("prompt").innerHTML.replace(' :','') );
+	var problem = document.getElementById("prompt").innerHTML.replace(' :','') + " = " + answer;
+	if (challenges.indexOf(problem) == -1) {
+		challenges.push( problem );
+	}
 	lastAnswerPlace = parseInt(id.replace('answerOption',''));
 	var statusDiv = document.getElementById("status");
 	statusDiv.innerHTML="Please try again.";
@@ -127,6 +130,8 @@ var counter;
  
 function startTimer()
 {
+  challenges = new Array();
+  document.getElementById("score").innerHTML = 0;
   count = parseInt(document.getElementById("seconds").value);
   document.getElementById("timer").innerHTML=count + " secs";
   counter=setInterval(timer, 1000); //1000 will  run it every 1 second
