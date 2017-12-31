@@ -20,23 +20,23 @@ function problem(){
 	if (op == 'm') {
 		document.title = "Multiplication";
 		maxForNumber1 = 12;
-		maxForNumber2 = 4;	
+		maxForNumber2 = 12; //4;	
 	}
 	
 	
 	do {
 		number1 = Math.round( Math.random() * maxForNumber1 );
-		number2 = Math.round( Math.random() * maxForNumber2 );
+		number2 = 3; //Math.round( Math.random() * maxForNumber2 );
 		
-		if (op == 'm')
-		{
-			// start temporary code
-			if (number2 == 3)
-				number2 = 10;
-			if (number2 == 4)
-				number2 = 5;
-			// end temporary code
-		}
+		//if (op == 'm')
+		//{
+		//	// start temporary code
+		//	if (number2 == 3)
+		//		number2 = 10;
+		//	if (number2 == 4)
+		//		number2 = 5;
+		//	// end temporary code
+		//}
 		
 		//randomly flip the numbers
 		if (Math.round( Math.random() * 1 ) == 1)
