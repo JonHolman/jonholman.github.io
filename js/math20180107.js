@@ -75,6 +75,7 @@ function incorrect(id) {
 	lastAnswerPlace = parseInt(id.replace('answerOption',''));
 	var statusDiv = document.getElementById("status");
 	statusDiv.innerHTML="Please try again.";
+	document.getElementById("score").innerHTML = parseInt(document.getElementById("score").innerHTML)-1;
 	fillButtons();
 	placeCorrectAnswer();
 }
@@ -90,7 +91,7 @@ function fillButtons(){
 	var index = 0;
 	
 	if (op == 'm') {
-		maxAnswerChoice = 67;
+		maxAnswerChoice = lastAnswer*2; //67;
 	}
 	else {
 		maxAnswerChoice = maxForNumber1+maxForNumber2;
