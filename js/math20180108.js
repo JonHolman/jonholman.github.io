@@ -26,7 +26,13 @@ function problem(){
 	
 	do {
 		number1 = Math.round( Math.random() * maxForNumber1 );
-		number2 = 8; //Math.round( Math.random() * maxForNumber2 );
+		
+		if (op == 'm') {
+			number2 = 8;
+		}
+		else {
+			number2 = Math.round( Math.random() * maxForNumber2 );
+		}
 		
 		//if (op == 'm')
 		//{
@@ -94,7 +100,7 @@ function fillButtons(){
 		maxAnswerChoice = lastAnswer*2; //67;
 	}
 	else {
-		maxAnswerChoice = maxForNumber1+maxForNumber2;
+		maxAnswerChoice = (maxForNumber1+maxForNumber2)*2;
 	}
 	
 	// from https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
@@ -107,9 +113,9 @@ function fillButtons(){
 	
 	[].forEach.call(els, function (el) { 
 		el.innerHTML=arr[index];
-		if (op == 'm' && el.innerHTML > 60) {
-			el.innerHTML=120;
-		}
+		//if (op == 'm' && el.innerHTML > 60) {
+		//	el.innerHTML=120;
+		//}
 		index++;
 		el.onclick  = function() {  incorrect(this.id); };
 	})
