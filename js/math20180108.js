@@ -26,7 +26,7 @@ function problem(){
 	
 	do {
 		number1 = Math.round( Math.random() * maxForNumber1 );
-		number2 = 3; //Math.round( Math.random() * maxForNumber2 );
+		number2 = 8; //Math.round( Math.random() * maxForNumber2 );
 		
 		//if (op == 'm')
 		//{
