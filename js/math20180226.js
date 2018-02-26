@@ -20,19 +20,13 @@ function problem(){
 	if (op == 'm') {
 		document.title = "Multiplication";
 		maxForNumber1 = 12;
-		maxForNumber2 = 12; //4;	
+		maxForNumber2 = 12;	
 	}
 	
 	
 	do {
 		number1 = Math.round( Math.random() * maxForNumber1 );
-		
-		if (op == 'm') {
-			number2 = 6;
-		}
-		else {
-			number2 = Math.round( Math.random() * maxForNumber2 );
-		}
+		number2 = Math.round( Math.random() * maxForNumber2 );
 		
 		//if (op == 'm')
 		//{
@@ -63,10 +57,10 @@ function problem(){
 	document.getElementById("prompt").innerHTML = "" + number1 + " ";
 	switch(op) {
 	    case 'm':
-		document.getElementById("prompt").innerHTML += "x";
+            document.getElementById("prompt").innerHTML += "x";
 		break;
 	    default:
-		document.getElementById("prompt").innerHTML += "+";
+            document.getElementById("prompt").innerHTML += "+";
 	}
 	document.getElementById("prompt").innerHTML += " " +     number2 + " :";
 	lastAnswer = answer;
