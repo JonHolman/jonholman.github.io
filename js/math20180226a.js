@@ -1,6 +1,6 @@
 var number1;
 var number2;
-var enteredAnswer;
+var selectedAnswer;
 var answer;
 var lastAnswerPlace=0;
 var lastAnswer=0;
@@ -22,22 +22,13 @@ function problem(){
 		maxForNumber1 = 12;
 		maxForNumber2 = 12;	
 	}
-	
-	
+		
 	do {
+        console.log('picking numbers');
 		number1 = Math.round( Math.random() * maxForNumber1 );
 		number2 = Math.round( Math.random() * maxForNumber2 );
-		
-		//if (op == 'm')
-		//{
-		//	// start temporary code
-		//	if (number2 == 3)
-		//		number2 = 10;
-		//	if (number2 == 4)
-		//		number2 = 5;
-		//	// end temporary code
-		//}
-		
+		console.log('numbers are' + number1 + ' and ' + number2);
+        
 		//randomly flip the numbers
 		if (Math.round( Math.random() * 1 ) == 1)
 		{
@@ -52,8 +43,10 @@ function problem(){
 		else {
 			answer = (number1 + number2);
 		}
-	} while (answer == lastAnswer &&
+	} while (answer == lastAnswer ||
 		(answer <= 1 &&  (Math.round( Math.random() * 1 ) == 1) ) );
+    
+    // display the new problem
 	document.getElementById("prompt").innerHTML = "" + number1 + " ";
 	switch(op) {
 	    case 'm':
@@ -63,10 +56,12 @@ function problem(){
             document.getElementById("prompt").innerHTML += "+";
 	}
 	document.getElementById("prompt").innerHTML += " " +     number2 + " :";
-	lastAnswer = answer;
+	
+    lastAnswer = answer;
 	fillButtons();
 	placeCorrectAnswer();
 }
+
 function incorrect(id) {
 	var problem = document.getElementById("prompt").innerHTML.replace(' :','') + " = " + answer;
 	if (challenges.indexOf(problem) == -1) {
@@ -79,12 +74,14 @@ function incorrect(id) {
 	fillButtons();
 	placeCorrectAnswer();
 }
+
 function correct() {
 	var statusDiv = document.getElementById("status");
 	statusDiv.innerHTML="Very good!";
 	document.getElementById("score").innerHTML = parseInt(document.getElementById("score").innerHTML)+1;
 	problem();
 }
+
 function fillButtons(){
 	var maxAnswerChoice;
 	var els = document.getElementsByClassName("answerButton");
@@ -107,18 +104,17 @@ function fillButtons(){
 	
 	[].forEach.call(els, function (el) { 
 		el.innerHTML=arr[index];
-		//if (op == 'm' && el.innerHTML > 60) {
-		//	el.innerHTML=120;
-		//}
 		index++;
 		el.onclick  = function() {  incorrect(this.id); };
 	})
 }
+
 function placeCorrectAnswer(){
-	var randomNum=0;
+	var randomNum = 0;
 	do {
 		randomNum = Math.floor( 1 + Math.random() * 4 );
 	} while (randomNum == lastAnswerPlace);
+    console.log('Placing correct answer at position ' + randomNum);
 	lastAnswerPlace = randomNum;
 	var el = document.getElementById( "answerOption" + randomNum );
 	el.innerHTML = answer; 
@@ -138,6 +134,7 @@ function startTimer()
   counter=setInterval(timer, 1000); //1000 will  run it every 1 second
   document.getElementById("timerForm").style.display = "none";
 }
+
 function timer()
 {
   count=count-1;
