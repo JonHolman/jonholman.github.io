@@ -44,7 +44,7 @@ function problem(){
 			answer = (number1 + number2);
 		}
 	} while (answer == lastAnswer ||
-		(answer <= 1 &&  (Math.round( Math.random() * 1 ) == 1) ) );
+		(answer <= 1 && (Math.random() >= 0.5) ) );
     
     // display the new problem
 	document.getElementById("prompt").innerHTML = "" + number1 + " ";
