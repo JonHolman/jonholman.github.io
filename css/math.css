@@ -1,4 +1,7 @@
-#prompt,#expPrompt,#options,#status,#scoreboard,#timer,#timerForm,#results,#closeButton{
+html, body, #portrait {
+    height: 100%;
+}
+#prompt,#expPrompt,#options,#status,#scoreboard,#timer,#timerForm,#results,#closeButton,#portrait {
 text-shadow: #7ea4bd 0 1px 0;
    color: #06426c;
    font-size: 24px;
@@ -9,11 +12,16 @@ text-shadow: #7ea4bd 0 1px 0;
 #prompt,#expPrompt{
 	padding-top: 20px;
 }
-#prompt,#options,#status {
+#prompt,#options,#status,#portrait {
    vertical-align: middle;
    margin: auto;
    width: 100%;
    clear: both;
+}
+#portrait>p  {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .answerButton {
 	width:40px;
@@ -62,3 +70,19 @@ text-shadow: #7ea4bd 0 1px 0;
   #scoreboard	{ top:5%; }
 }
  */
+ 
+@media (orientation:landscape) {
+   #portrait {
+     display: none;
+   }
+}
+
+@media (orientation:portrait) {
+   body {
+     transform: rotate(0.25turn);
+     margin-right: 100px;
+   }
+   #portrait {
+     display: none;
+   }
+}

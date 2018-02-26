@@ -3,7 +3,7 @@ var number2;
 var selectedAnswer;
 var answer;
 var lastAnswerPlace=0;
-var lastAnswer=0;
+var lastAnswer = -1;
 var challenges = new Array();
 
 var op = 'a';
@@ -19,32 +19,33 @@ function problem(){
 	
 	if (op == 'm') {
 		document.title = "Multiplication";
-		maxForNumber1 = 12;
+		maxForNumber1 = 1;
 		maxForNumber2 = 12;	
 	}
 		
 	do {
-        console.log('picking numbers');
-		number1 = Math.round( Math.random() * maxForNumber1 );
+        number1 = Math.round( Math.random() * maxForNumber1 );
 		number2 = Math.round( Math.random() * maxForNumber2 );
-		console.log('numbers are' + number1 + ' and ' + number2);
+		
+        // randomly regenerate number1 if its value <= 1, to reduce easy questions
+        if (number1 <= 1 && (Math.random() >= 0.5))
+            number1 = Math.round( Math.random() * maxForNumber1 );
         
-		//randomly flip the numbers
-		if (Math.round( Math.random() * 1 ) == 1)
+        //randomly flip the numbers
+		if (Math.random() >= 0.5)
 		{
 			temp = number2;
 			number2 = number1;
 			number1 = temp;
 		}
-
-		if (op == 'm') {
+           
+        if (op == 'm') {
 			answer = (number1 * number2);
 		}
 		else {
 			answer = (number1 + number2);
 		}
-	} while (answer == lastAnswer ||
-		(answer <= 1 && (Math.random() >= 0.5) ) );
+	} while (answer == lastAnswer);
     
     // display the new problem
 	document.getElementById("prompt").innerHTML = "" + number1 + " ";
@@ -88,12 +89,12 @@ function fillButtons(){
 	var index = 0;
 	
 	if (op == 'm') {
-		maxAnswerChoice = lastAnswer*2; //67;
+		maxAnswerChoice = (maxForNumber1*maxForNumber2)+10;
 	}
 	else {
 		maxAnswerChoice = (maxForNumber1+maxForNumber2)*2;
 	}
-	
+	    
 	// from https://stackoverflow.com/questions/2380019/generate-unique-random-numbers-between-1-and-100
 	var arr = []
 	while(arr.length < els.length){
@@ -101,7 +102,7 @@ function fillButtons(){
 	    if(arr.indexOf(randomnumber) > -1 || randomnumber == answer) continue;
 	    arr[arr.length] = randomnumber;
 	}
-	
+    
 	[].forEach.call(els, function (el) { 
 		el.innerHTML=arr[index];
 		index++;
@@ -114,8 +115,7 @@ function placeCorrectAnswer(){
 	do {
 		randomNum = Math.floor( 1 + Math.random() * 4 );
 	} while (randomNum == lastAnswerPlace);
-    console.log('Placing correct answer at position ' + randomNum);
-	lastAnswerPlace = randomNum;
+    lastAnswerPlace = randomNum;
 	var el = document.getElementById( "answerOption" + randomNum );
 	el.innerHTML = answer; 
 	el.onclick  = function() {  correct(); };
