@@ -78,10 +78,10 @@ text-shadow: #7ea4bd 0 1px 0;
 }
 
 @media (orientation:portrait) {
-/*    body {
+    body {
      transform: rotate(0.25turn);
-     margin-right: 100px;
-   } */
+     /* margin-right: 100px; */
+   } 
    #landscape {
      display: none;
    }
