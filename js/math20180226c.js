@@ -28,7 +28,7 @@ function problem(){
 		number2 = Math.round( Math.random() * maxForNumber2 );
 		
         // randomly regenerate number1 if its value <= 1, to reduce easy questions
-        if (number1 <= 1 && (Math.random() >= 0.5))
+        if (number1 <= 1 && (Math.random() >= 0.2))
             number1 = Math.round( Math.random() * maxForNumber1 );
         
         //randomly flip the numbers
