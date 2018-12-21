@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/jonholmanflexion
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.jonholman.com
+  * I am jonholmanflexion (https://keybase.io/jonholmanflexion) on keybase.
+  * I have a public key ASBthXpf_sQXVzyUc0i02lYPUZ9PhD1t4M1-Mcw6C10E8Ao
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01206d857a5ffec417573c947348b4da560f519f4f843d6de0cd7e31cc3a0b5d04f00a",
+      "host": "keybase.io",
+      "kid": "01206d857a5ffec417573c947348b4da560f519f4f843d6de0cd7e31cc3a0b5d04f00a",
+      "uid": "d3f930908ac07537cc51269bba07c119",
+      "username": "jonholmanflexion"
+    },
+    "merkle_root": {
+      "ctime": 1545416205,
+      "hash": "7eb2b8af91904231a965ca55cc260e67d78dd00db78f2a6d6368bb14f7690f30e6d794f08b458ebe6e9e72d5924ada4a2db817d9eed48835d82a181a8ae25920",
+      "hash_meta": "e225a71b3f699c2b2acabb2f4c0edfa5bc244ad9cb2c0f1ef1ede5fff507d0ed",
+      "seqno": 4181500
+    },
+    "service": {
+      "entropy": "d9Lm53uF9gB68Bbsi7V4XnCv",
+      "hostname": "www.jonholman.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.12.2"
+  },
+  "ctime": 1545416259,
+  "expire_in": 504576000,
+  "prev": "4b935af42284efdf76c44547a07f043e1d6ee783bf91bebb5861568a0315e90b",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgbYV6X/7EF1c8lHNItNpWD1GfT4Q9beDNfjHMOgtdBPAKp3BheWxvYWTESpcCB8QgS5Na9CKE7992xEVHoH8EPh1u54O/kb67WGFWigMV6QvEILGYM4OXi++bspx5XYW8aTghJ42KZwq6/Pdzu4T7e4h2AgHCo3NpZ8RAbhp7/iViTmBT7sGF0qNtlpaAMMtwwbavckq7V9hR3YU0BfhJYBU3iF7JmCRZ57byOGUtAVrQJVyZOSPBHOyfBKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIF4J6tw0NLKV/Cc1/ZjZqiQpUpmzZUDItA51KyqmPm1to3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jonholmanflexion
+
+==================================================================
